@@ -1,0 +1,46 @@
+Design critique:
+
+Overall, we think the code was designed very well. The model interface provides all the necessary
+mechanisms for modifying the contents of a cell, evaluating the value of a cell, and getting the
+pure text typed into a cell. The "features" interface, SpreadsheetListener, has a method that allows
+a model's contents to be modified which enables a structure where the view is unable to and
+doesn't have to modify the model. The view interface was extremely simplified and easy to work with,
+as it just involved adding a listener and being able to render the view. The only minor critique is
+we didn't understand why it was relevant for the Worksheet interface to have a parameter for the
+object representing a cell, because anything working the Worksheet interface shouldn't have to know
+about how cells are stored internally in the Worksheet. This observation is compounded by the fact
+that the only time this parameter is relevant is when you check if its null in the EditableGUI class,
+which to us suggests that the functionality that the method is relevant for could have been replaced
+by a method that returns a boolean, which would be easier to predict the behavior for. Besides that,
+the interfaces were flexible and easy to work with.
+
+Implementation critique:
+
+The view implemented was extremely capable and satisfied all of the desired functionality
+comprehensively. Specifically, we think they did a good job of splitting each of the main panels
+into their own classes and following the principle of "single responsibility". A couple extremely
+minor points, we weren't sure why the getEditablePanel method in EditingPanel was relevant
+because it seemed like all of that functionality could've just been in a constructor for a
+EditablePanel. Also, the JTable and its methods were leveraged well, but there seemed to be
+a lot of code that dealt with trying to adapt to the JTable when simply drawing a grid of cells may
+have sufficed, and it's possible that in the future there's complex functionality that you want
+a spreadsheet to support that a JTable would not be able to adapt to.
+
+Documentation critique:
+
+Most of the interface methods had documentation that sufficiently captured the relevant information
+needed to adequately implement the methods. However, there were a couple methods where we didn't
+think the documentation was detailed enough. The main case that we think should've been documented
+more was the fact that for "blank" cells, evaluate and getCellAt should return null. While a detail
+like this may seem intuitive, our model implementation didn't use null in any form, and it took us
+a while to figure out how to handle that case because the view was dependent on it returning null.
+
+Code limitations:
+
+The small limitation with your interfaces right now is the view and controller interface mainly just
+have methods that facilitate editing cells, which has the upside of being really easy to work with,
+and things like selected cells and moving across cells are internal to the view. However, if in the
+future you want to keep multiple views synchronized, your current interfaces wouldn't be able to
+facilitate that, but with your design it would be easy to add new methods to extended versions of
+your current interface like "selectCell" that notifies the controller of even low-level events.
+

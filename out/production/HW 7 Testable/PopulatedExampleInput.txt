@@ -1,0 +1,16 @@
+A1 5
+A3 10
+A5 15
+A7 20
+A9 25
+B2 "hello"
+B4 "goodbye"
+B7 =(CONCAT B2 B4)
+B9 true
+B10 false
+C1 =(SUM A1 A3 B7)
+C4 =(PRODUCT C1 A1 A9)
+C6 =(< C1 (PRODUCT C4 A5))
+D5 =(SUM A1:A9 C1)
+
+

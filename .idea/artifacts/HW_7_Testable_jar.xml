@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="HW 7 Testable:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/HW_7_Testable_jar</output-path>
+    <root id="archive" name="HW 7 Testable.jar">
+      <element id="module-output" name="HW 7 Testable" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,2 @@
+A1 =(CONCAT 1 "hi")
+F12 =(< "hello" 1)

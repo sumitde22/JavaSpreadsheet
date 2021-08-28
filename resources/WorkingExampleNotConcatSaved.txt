@@ -1,0 +1,5 @@
+A1 "hello"
+B1 =2
+C1 true
+D1 -5
+E1 =(< (PRODUCT A1:D1 0.5) (SUM C1 false (PRODUCT 2)))

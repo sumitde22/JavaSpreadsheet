@@ -1,0 +1,18 @@
+Experience Review:
+
+We think working with other people's code gave us a stronger understanding of the  importance of
+interfaces and encapsulating implementation details, and it was overall positive experience. One
+thing we changed about the code we sent to the customer was our Value implementation that was
+returned by the model was also tied to internal details in the model like the contents of a cell
+(formulas, functions, references, etc). We were successfully able to decouple the value from the
+internal details and provide that code to the customer, but in hindsight it would've been better
+to have two separate types of values, one internal to the model and another that is solely a
+value object that can be worked with by a client of the model. Another small change to our
+implementation that could've made it a cleaner design would be to have the panels we built in the
+editable GUI be their own separate, custom classes rather than just stuffing all the panels in the
+constructor for the view.
+
+The experience with our providers went pretty well, and the code they gave us was simple and easy to
+work with yet comprehensively covered all the requisite functionality. Writing adapter classes to
+convert from our implementation to their interface was pretty seamless and mainly just involved
+calling our version of a method on a delegate to implement their version of a method. 

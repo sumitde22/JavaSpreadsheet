@@ -1,0 +1,4 @@
+A1 "hello"
+A3 " "
+F3 ="bye"
+ZZ100 =(CONCAT A1 F3 (CONCAT "cat" "dog"))

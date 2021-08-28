@@ -1,0 +1,16 @@
+C4 =(PRODUCT C1 A1 A9)
+D5 =(SUM A1:A9 C1)
+A2 2
+A1 5
+B2 "hello"
+D4 6
+C1 =(SUM A1 A3 B7)
+A9 25
+B10 false
+B9 true
+A7 20
+B7 =(CONCAT B2 B4)
+A5 15
+C6 =(< C1 (PRODUCT C4 A5))
+A3 10
+B4 "goodbye"
